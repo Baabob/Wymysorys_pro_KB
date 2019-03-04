@@ -14,7 +14,7 @@ The original macOS layout was initially inspired by Bartek Chromik's layout for 
 
 Here's the layout:
 
-![alt text](https://github.com/Baabob/Wymysorys_pro_KB/blob/master/wym_pro_layout.png "layout")
+![alt text](https://github.com/BobBorges/Wymysorys_pro_KB/blob/master/wym_pro_layout.png "layout")
 
 
 Installation
