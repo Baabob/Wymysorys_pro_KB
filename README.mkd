@@ -1,0 +1,63 @@
+Wymysorys Pro Keyboard
+======================
+* Wymysorys pro keyboard layout for Linux systems
+* Author: Robert Borges
+* Date: 20190304
+* Version 1.0
+* license: [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/)
+
+About
+-----
+This is a keyboard layout created for working with Wymsorys where one regularly needs the ȧ & Ȧ (U+0027, U+0226) characters. Wymysorys uses most special characters from Polish, but also letters like ö, which at the time I started working with the language wasn't in my Polish keyboard. So for single words, I found myself switching between English and Polish keyboard layouts, while still needing to open up the character pallet. Since this is an overwhelming pain in the ass, I created a layout for the (macOS) computer I was using at the time. After migrating laptops and starting with a new OS, I needed a suitable keyboard. So I made one.
+
+The original macOS layout was initially inspired by Bartek Chromik's layout for windows machines, as I and later he began using Macs, I designed a layout for macOS by altering the Polish pro layout. This layout grew from that one, but it has evolved some. Nevertheless, this layout should be suitable for writing most European languages with a Latin orthography, but is certain to meet all your Wymysorys, Polish, and English needs.
+
+Here's the layout:
+
+ ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━┓
+ │ ~ ~ │ ! ¹ │ @ ˛ │ # ˝ │ $ § │ % ¯ │ ^ ˇ │ & ¸ │ * ꞏ    │ ( ̣˙ │ ) ̣  │ _ — │ + ± ┃ ⌫ Back  ┃
+ │ ` ` │ 1 ¡ │ 2 € │ 3 £ │ 4 ¢ │ 5 ' │ 6 ^ │ 7 ¶ │ 8 • │ 9 ß │ 0 º │ - – │ = ≠ ┃  space  ┃
+ ┢━━━━━┷━┱───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┺━┳━━━━━━━┫
+ ┃       ┃ Q Ȧ │ W Ø │ E Ę │ R É │ T È │ Y Í │ U „ │ I Ì │ O Ó │ P Ò │ { « │ } » ┃ Enter ┃
+ ┃Tab ↹  ┃ q ȧ │ w ø │ e ę │ r é │ t è │ y í │ u " │ i ì │ o ó │ p ò │ [ ‹ │ ] › ┃   ⏎   ┃
+ ┣━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓      ┃
+ ┃        ┃ A Ą │ S Ś │ D Á │ F À │ G Ú │ H Ù │ J Ə │ K   │ L Ł │ : Œ │ " Æ │ |   ┃      ┃
+ ┃Caps ⇬  ┃ a ą │ s ś │ d á │ f à │ g ú │ h ù │ j ə │ k ° │ l ł │ ; œ │ ' Æ │ \   ┃      ┃
+ ┣━━━━━━━━┹────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┲┷━━━━━┻━━━━━━┫
+ ┃             │ Z Ż │ X Ź │ C Ć │ V Ž │ B Ŋ │ N Ń │ M Ń │ < ÷ │ > ≈ │ ? ʔ ┃             ┃
+ ┃Shift ⇧      │ z ż │ x ź │ c ć │ v ž │ b ŋ │ n ń │ m ñ │ , ≤ │ . ≥ │ / ¿ ┃Shift ⇧      ┃
+ ┣━━━━━━━┳━━━━━┷━┳━━━┷━━━┱─┴─────┴─────┴─────┴─────┴─────┴───┲━┷━━━━━╈━━━━━┻━┳━━━━━━━┳━━━┛
+ ┃       ┃       ┃       ┃ ␣                               ⍽ ┃       ┃       ┃       ┃
+ ┃Ctrl   ┃Meta   ┃Alt    ┃ ␣           Space               ⍽ ┃AltGr ⇮┃Menu   ┃Ctrl   ┃
+ ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹───────────────────────────────────┺━━━━━━━┻━━━━━━━┻━━━━━━━┛
+
+
+Installation
+------------
+These are the steps I followed to install the keyboard on Linux Mint 19.1. There will probably be some differences in different distributions. 
+
+1. Move the wym_pro layout file into your layouts folder. For me it's `/usr/share/X11/xkb/symbols`.
+2. Edit the `evdev.xml` file. For me it was in the `/usr/share/X11/xkb/rules` folder. The following code block has to be added to the end of the `<layoutsList>`.
+```<layout>
+         <configItem>
+           <name> wym_pro </name>
+           <shortDescription> Wymysorys Pro </shortDescription>
+           <description> Wymysorys Pro </description>
+           <languageList>
+              <iso639Id> wym </iso639Id>
+           </languageList>
+         </configItem>
+         <variantList/>
+       </layout>
+```
+3. Edit the `xorg.xml` file. This should be in the same folder as `evdev.xml`. Add the following codeblock to the end of the  `<layoutsList>`.
+```<layout>
+         <configItem>
+           <name> wym_pro </name>
+           <shortDescription> Wymysorys Pro </shortDescription>
+           <description> Wymysorys Pro </description>
+         </configItem>
+       </layout>
+```
+4. Edit the `xorg.list` file, in the same folder as the last two. Find the list that starts with `! layout` and append `wym_pro    Wymysorys Pro`.
+5. Reboot, add the Wymysorys Pro keyboard layout in `system settings>keyboards`, and select it for use. It should be working right away, but maybe log out & in again if not. 

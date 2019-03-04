@@ -1,0 +1,161 @@
+// Wymysorys pro keyboard layout for Linux systems
+// author: Robert Borges
+// Date: 20190304 
+// Version 1.0
+// license: [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/)
+
+// About
+// -----
+// This is a keyboard layout created for working with Wymsorys where one regularly needs the ȧ & Ȧ (U+0027, U+0226) characters.
+// Wymysorys uses most special characters from Polish, but also letters like ö, which at the time I started working with the language 
+// wasn't in my Polish keyboard. So for single words, I found myself switching between English and Polish keyboard layouts, while 
+// still needing to open up the character pallet. Since this is an overwhelming pain in the ass, I created a layout for the (macOS) 
+// computer I was using at the time. After migrating laptops and starting with a new OS, I needed a suitable keyboard. So I made one.
+
+// The original macOS layout was initially inspired by Bartek Chromik's layout for windows machines, as I and later he began using 
+// Macs, I designed a layout for macOS by altering the Polish pro layout. This layout grew from that one, but it has evolved some. 
+// Nevertheless, this layout should be suitable for writing most European languages with a Latin orthography, but is certain to meet 
+// all your Wymysorys, Polish, and English needs.
+
+// More details + instructions (key codes, layout, installation instructions) to follow, but for now, here's the layout:
+
+// ┌────┐
+// │ 2 4│   2 = Shift,  4 = alt-gr + Shift
+// │ 1 3│   1 = Normal, 3 = alt-gr
+// └────┘
+// ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━┓
+// │ ~ ~ │ ! ¹ │ @ ˛ │ # ˝ │ $ § │ % ¯ │ ^ ˇ │ & ¸ │ * ꞏ    │ ( ̣˙ │ ) ̣  │ _ — │ + ± ┃ ⌫ Back  ┃
+// │ ` ` │ 1 ¡ │ 2 € │ 3 £ │ 4 ¢ │ 5 ' │ 6 ^ │ 7 ¶ │ 8 • │ 9 ß │ 0 º │ - – │ = ≠ ┃  space  ┃
+// ┢━━━━━┷━┱───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┺━┳━━━━━━━┫
+// ┃       ┃ Q Ȧ │ W Ø │ E Ę │ R É │ T È │ Y Í │ U „ │ I Ì │ O Ó │ P Ò │ { « │ } » ┃ Enter ┃
+// ┃Tab ↹  ┃ q ȧ │ w ø │ e ę │ r é │ t è │ y í │ u " │ i ì │ o ó │ p ò │ [ ‹ │ ] › ┃   ⏎   ┃
+// ┣━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓      ┃
+// ┃        ┃ A Ą │ S Ś │ D Á │ F À │ G Ú │ H Ù │ J Ə │ K   │ L Ł │ : Œ │ " Æ │ |   ┃      ┃
+// ┃Caps ⇬  ┃ a ą │ s ś │ d á │ f à │ g ú │ h ù │ j ə │ k ° │ l ł │ ; œ │ ' Æ │ \   ┃      ┃
+// ┣━━━━━━━━┹────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┲┷━━━━━┻━━━━━━┫
+// ┃             │ Z Ż │ X Ź │ C Ć │ V Ž │ B Ŋ │ N Ń │ M Ń │ < ÷ │ > ≈ │ ? ʔ ┃             ┃
+// ┃Shift ⇧      │ z ż │ x ź │ c ć │ v ž │ b ŋ │ n ń │ m ñ │ , ≤ │ . ≥ │ / ¿ ┃Shift ⇧      ┃
+// ┣━━━━━━━┳━━━━━┷━┳━━━┷━━━┱─┴─────┴─────┴─────┴─────┴─────┴───┲━┷━━━━━╈━━━━━┻━┳━━━━━━━┳━━━┛
+// ┃       ┃       ┃       ┃ ␣                               ⍽ ┃       ┃       ┃       ┃
+// ┃Ctrl   ┃Meta   ┃Alt    ┃ ␣           Space               ⍽ ┃AltGr ⇮┃Menu   ┃Ctrl   ┃
+// ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹───────────────────────────────────┺━━━━━━━┻━━━━━━━┻━━━━━━━┛
+
+default  partial alphanumeric_keys
+xkb_symbols "basic" {
+
+//    name[Group1]= "English (US)";
+
+    key <TLDE> {	[     grave,        asciitilde,    dead_grave,      dead_tilde          ]	};
+    key <AE01> {	[	  1,	        exclam,        exclamdown,      onesuperior 		]	};
+    key <AE02> {	[	  2,	        at,            EuroSign,        dead_ogonek     	]	};
+    key <AE03> {	[	  3,	        numbersign,    sterling,        dead_doubleacute    ]	};
+    key <AE04> {	[	  4,	        dollar,        U00A2,           U00A7               ]	};
+    key <AE05> {	[	  5,	        percent,	   dead_acute,      dead_macron         ]	};
+    key <AE06> {	[	  6,	        asciicircum,   dead_circumflex, dead_caron          ]	};
+    key <AE07> {	[	  7,	        ampersand,     U00B6,           dead_cedilla        ]	};
+    key <AE08> {	[	  8,	        asterisk,      U2022,           UA78F               ]	};
+    key <AE09> {	[	  9,	        parenleft,     U00DF,	        dead_abovedot       ]	};
+    key <AE10> {	[	  0,	        parenright,    U00BA,           dead_belowdot       ]	};
+    key <AE11> {	[     minus,	    underscore,    U2013,           U2014           	]	};
+    key <AE12> {	[     equal,	    plus,          U2260,           U00B1	        	]	};
+
+    key <AD01> {	[	  q,	        Q,             U0227,           U0226 		        ]	};
+    key <AD02> {	[	  w,	        W,             U00F8,           U00D8      		    ]	};
+    key <AD03> {	[	  e,	        E,             eogonek,         Eogonek	        	]	};
+    key <AD04> {	[	  r,	        R,             U00E9,           U00C9      		    ]	};
+    key <AD05> {	[	  t,	        T,             U00E8,           U00C8      		    ]	};
+    key <AD06> {	[	  y,	        Y,             U00ED,           U00CD         		]	};
+    key <AD07> {	[	  u,	        U,             dead_diaeresis,  U201E          		]	};
+    key <AD08> {	[	  i,	        I,             U00EC,           U00CC      		    ]	};
+    key <AD09> {	[	  o,	        O,             U00F3,           U00D3          	    ]	};
+    key <AD10> {	[	  p,	        P,             U00F2,           U00D2	        	]	};
+    key <AD11> {	[ bracketleft,	braceleft,         U2039,           U00AB	            ]	};
+    key <AD12> {	[ bracketright,	braceright,        U203A,           U00BB          	    ]	};
+
+    key <AC01> {	[	  a,	        A,             aogonek,         Aogonek      		]	};
+    key <AC02> {	[	  s,        	S,             U015B,           U015A        		]	};
+    key <AC03> {	[	  d,        	D,             U00E1,           U00C1          	    ]	};
+    key <AC04> {	[	  f,        	F,             U00E0,           U00C0      	    	]	};
+    key <AC05> {	[	  g,        	G,             U00FA,           U00DA      		    ]	};
+    key <AC06> {	[	  h,        	H,             U00F9,           U00D9        		]	};
+    key <AC07> {	[	  j,        	J,             schwa,           SCHWA               ]	};
+    key <AC08> {	[	  k,        	K,             dead_abovering                		]	};
+    key <AC09> {	[	  l,        	L,             lstroke,         Lstroke     		]	};
+    key <AC10> {	[ semicolon,	colon,             U0153,           U0152      		    ]	};
+    key <AC11> {	[ apostrophe,	quotedbl,          U00E6,           U00C6          	    ]	};
+
+    key <AB01> {	[	  z,	        Z,             U017C,           U017B      		    ]	};
+    key <AB02> {	[	  x,	        X,             U017A,           U0179      		    ]	};
+    key <AB03> {	[	  c,	        C,             U0107,           U0106	        	]	};
+    key <AB04> {	[	  v,	        V,             U017E,           U017D	        	]	};
+    key <AB05> {	[	  b,	        B,             U014B,           U014a      	    	]	};
+    key <AB06> {	[	  n,	        N,             U0144,           U0143      		    ]	};
+    key <AB07> {	[	  m,	        M,             U00F1,           U00D1      		    ]	};
+    key <AB08> {	[     comma,	    less,          lessthanequal,   U00F7     		    ]	};
+    key <AB09> {	[    period,	    greater,       greaterthanequal, U2248         		]	};
+    key <AB10> {	[     slash,	    question,      questiondown,    U0294               ]	};
+
+    key <BKSL> {	[ backslash,         bar                                            	]	};
+};
+
+
+// Installation
+// ------------
+// These are the steps I followed to install the keyboard on Linux Mint 19.1. There will probably be some differences in different distributions. 
+
+// 1. Move the wym_pro layout file into your layouts folder. For me it's `/usr/share/X11/xkb/symbols`.
+// 2. Edit the `evdev.xml` file. For me it was in the `/usr/share/X11/xkb/rules` folder. The following code block has to be added to the end of the `<layoutsList>`.
+// ```<layout>
+//         <configItem>
+//           <name> wym_pro </name>
+//           <shortDescription> Wymysorys Pro </shortDescription>
+//           <description> Wymysorys Pro </description>
+//           <languageList>
+//              <iso639Id> wym </iso639Id>
+//           </languageList>
+//         </configItem>
+//         <variantList/>
+//       </layout>
+// ```
+// 3. Edit the `xorg.xml` file. This should be in the same folder as `evdev.xml`. Add the following codeblock to the end of the  `<layoutsList>`.
+// ```<layout>
+//          <configItem>
+//            <name> wym_pro </name>
+//            <shortDescription> Wymysorys Pro </shortDescription>
+//            <description> Wymysorys Pro </description>
+//          </configItem>
+//        </layout>
+// ```
+// 4. Edit the `xorg.list` file, in the same folder as the last two. Find the list that starts with `! layout` and append `wym_pro    Wymysorys Pro`.
+// 5. Reboot, add the Wymysorys Pro keyboard layout in `system settings>keyboards`, and select it for use. It should be working right away, but maybe log out & in again if not. 
+
+
+//////////////////////////////////
+//////////////////////////////////
+// In case you want to edit the layout, here is some more explanation about the key codes and the columns in the layout.
+
+// Key Codes
+// ---------
+
+// key codes are broken into three parts, e.g. <AB01> is made of A (part 1), B (part 2), and 01 (part 3).
+
+// part 1 = the part of the keyboard;
+//      A: alphanumeric keys
+//      FK: function keys
+//      KP: keypad
+
+// part 2: row (counting from bottom row [spacebar]), A-E
+
+// part 3: keys, numbered left to right
+
+
+// Columns in the layout
+// ---------------------
+
+// bare key, shift+key, alt-gr+key, alt-gr+shift+key
+
+// When the character name was found in either the US or Polish layouts, the name was used,
+// otherwise, the unicode string was used.
+
+
+
