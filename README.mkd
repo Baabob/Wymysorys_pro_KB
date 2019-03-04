@@ -14,22 +14,7 @@ The original macOS layout was initially inspired by Bartek Chromik's layout for 
 
 Here's the layout:
 
- ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━┓
- │ ~ ~ │ ! ¹ │ @ ˛ │ # ˝ │ $ § │ % ¯ │ ^ ˇ │ & ¸ │ * ꞏ    │ ( ̣˙ │ ) ̣  │ _ — │ + ± ┃ ⌫ Back  ┃
- │ ` ` │ 1 ¡ │ 2 € │ 3 £ │ 4 ¢ │ 5 ' │ 6 ^ │ 7 ¶ │ 8 • │ 9 ß │ 0 º │ - – │ = ≠ ┃  space  ┃
- ┢━━━━━┷━┱───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┺━┳━━━━━━━┫
- ┃       ┃ Q Ȧ │ W Ø │ E Ę │ R É │ T È │ Y Í │ U „ │ I Ì │ O Ó │ P Ò │ { « │ } » ┃ Enter ┃
- ┃Tab ↹  ┃ q ȧ │ w ø │ e ę │ r é │ t è │ y í │ u " │ i ì │ o ó │ p ò │ [ ‹ │ ] › ┃   ⏎   ┃
- ┣━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓      ┃
- ┃        ┃ A Ą │ S Ś │ D Á │ F À │ G Ú │ H Ù │ J Ə │ K   │ L Ł │ : Œ │ " Æ │ |   ┃      ┃
- ┃Caps ⇬  ┃ a ą │ s ś │ d á │ f à │ g ú │ h ù │ j ə │ k ° │ l ł │ ; œ │ ' Æ │ \   ┃      ┃
- ┣━━━━━━━━┹────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┬┴────┲┷━━━━━┻━━━━━━┫
- ┃             │ Z Ż │ X Ź │ C Ć │ V Ž │ B Ŋ │ N Ń │ M Ń │ < ÷ │ > ≈ │ ? ʔ ┃             ┃
- ┃Shift ⇧      │ z ż │ x ź │ c ć │ v ž │ b ŋ │ n ń │ m ñ │ , ≤ │ . ≥ │ / ¿ ┃Shift ⇧      ┃
- ┣━━━━━━━┳━━━━━┷━┳━━━┷━━━┱─┴─────┴─────┴─────┴─────┴─────┴───┲━┷━━━━━╈━━━━━┻━┳━━━━━━━┳━━━┛
- ┃       ┃       ┃       ┃ ␣                               ⍽ ┃       ┃       ┃       ┃
- ┃Ctrl   ┃Meta   ┃Alt    ┃ ␣           Space               ⍽ ┃AltGr ⇮┃Menu   ┃Ctrl   ┃
- ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹───────────────────────────────────┺━━━━━━━┻━━━━━━━┻━━━━━━━┛
+![alt text](https://github.com/Baabob/Wymysorys_pro_KB/wym_pro_layout.png "layout")
 
 
 Installation
@@ -38,7 +23,8 @@ These are the steps I followed to install the keyboard on Linux Mint 19.1. There
 
 1. Move the wym_pro layout file into your layouts folder. For me it's `/usr/share/X11/xkb/symbols`.
 2. Edit the `evdev.xml` file. For me it was in the `/usr/share/X11/xkb/rules` folder. The following code block has to be added to the end of the `<layoutsList>`.
-```<layout>
+```
+      <layout>
          <configItem>
            <name> wym_pro </name>
            <shortDescription> Wymysorys Pro </shortDescription>
@@ -51,7 +37,8 @@ These are the steps I followed to install the keyboard on Linux Mint 19.1. There
        </layout>
 ```
 3. Edit the `xorg.xml` file. This should be in the same folder as `evdev.xml`. Add the following codeblock to the end of the  `<layoutsList>`.
-```<layout>
+```
+      <layout>
          <configItem>
            <name> wym_pro </name>
            <shortDescription> Wymysorys Pro </shortDescription>
