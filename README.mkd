@@ -20,6 +20,7 @@ Here's the layout:
 Installation
 ------------
 These are the steps I followed to install the keyboard on Linux Mint 19.1. There will probably be some differences in different distributions. 
+**Note:** I discovered (by installing on another system with the same distro/version) that the layout requires the "English (US, intl, with dead keys)" layout to also be installed. 
 
 1. Move the wym_pro layout file into your layouts folder. For me it's `/usr/share/X11/xkb/symbols`.
 2. Edit the `evdev.xml` file. For me it was in the `/usr/share/X11/xkb/rules` folder. The following code block has to be added to the end of the `<layoutsList>`.
