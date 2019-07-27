@@ -48,7 +48,7 @@ These are the steps I followed to install the keyboard on Linux Mint 19.1. There
            </configItem>
          </layout>
 
-5. Edit the `xorg.list` file, in the same folder as the last two. Find the list that starts with `! layout` and append with
+5. Edit the `xorg.lst` file, in the same folder as the last two. Find the list that starts with `! layout` and append with
 
         wym_pro    Wymysorys Pro
 
