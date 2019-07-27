@@ -19,33 +19,37 @@ Here's the layout:
 
 Installation
 ------------
-These are the steps I followed to install the keyboard on Linux Mint 19.1. There will probably be some differences in different distributions. 
-**Note:** I discovered (by installing on another system with the same distro/version) that the layout requires the "English (US, intl, with dead keys)" layout to also be installed. 
+These are the steps I followed to install the keyboard on Linux Mint 19.1. There will probably be some differences in different distributions. It requires moving the layout file to the appropriate folder and editing three of the system files in the `rules` folder. I have included these files in the `rules` folder in this repo. If you're on Mint 19.1 and don't plan any other customizations to the keyboard layouts, you could rename/replace your system files with these, but please, for goodness sake, back up your sys files first in case sth goes wrong.
 
-1. Move the wym_pro layout file into your layouts folder. For me it's `/usr/share/X11/xkb/symbols`.
-2. Edit the `evdev.xml` file. For me it was in the `/usr/share/X11/xkb/rules` folder. The following code block has to be added to the end of the `<layoutsList>`.
-```
-      <layout>
-         <configItem>
-           <name> wym_pro </name>
-           <shortDescription> Wymysorys Pro </shortDescription>
-           <description> Wymysorys Pro </description>
-           <languageList>
+
+1. Install the "English (US, intl, with dead keys)" layout via the Keyboard settings.
+2. Move the wym_pro layout file into your layouts folder. For me it's `/usr/share/X11/xkb/symbols`.
+3. Edit the `evdev.xml` file. For me it was in the `/usr/share/X11/xkb/rules` folder. The following code block has to be added to the end of the `<layoutsList>`.
+
+        <layout>
+          <configItem>
+            <name> wym_pro </name>
+            <shortDescription> Wymysorys Pro </shortDescription>
+            <description> Wymysorys Pro </description>
+            <languageList>
               <iso639Id> wym </iso639Id>
-           </languageList>
-         </configItem>
-         <variantList/>
-       </layout>
-```
-3. Edit the `xorg.xml` file. This should be in the same folder as `evdev.xml`. Add the following codeblock to the end of the  `<layoutsList>`.
-```
-      <layout>
-         <configItem>
-           <name> wym_pro </name>
-           <shortDescription> Wymysorys Pro </shortDescription>
-           <description> Wymysorys Pro </description>
-         </configItem>
-       </layout>
-```
-4. Edit the `xorg.list` file, in the same folder as the last two. Find the list that starts with `! layout` and append `wym_pro    Wymysorys Pro`.
-5. Reboot, add the Wymysorys Pro keyboard layout in `system settings>keyboards`, and select it for use. It should be working right away, but maybe log out & in again if not. 
+            </languageList>
+          </configItem>
+          <variantList/>
+        </layout>
+
+4. Edit the `xorg.xml` file. This should be in the same folder as `evdev.xml`. Add the following codeblock to the end of the  `<layoutsList>`.
+
+        <layout>
+          <configItem>
+            <name> wym_pro </name>
+            <shortDescription> Wymysorys Pro </shortDescription>
+            <description> Wymysorys Pro </description>
+           </configItem>
+         </layout>
+
+5. Edit the `xorg.list` file, in the same folder as the last two. Find the list that starts with `! layout` and append with
+
+        wym_pro    Wymysorys Pro
+
+6. Reboot, add the Wymysorys Pro keyboard layout in `system settings>keyboards`, and select it for use. It should be working right away, but maybe log out & in again if not. 
